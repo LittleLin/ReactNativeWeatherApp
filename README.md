@@ -16,12 +16,7 @@ Inspired by these open source projects:
 
 # Screenshot
 ----------
-
-## iOS
 ![iOS](iOS.png)
-
-## Android
-![Android](Android.png)
 
 Wallpaper Source
 -------------------
