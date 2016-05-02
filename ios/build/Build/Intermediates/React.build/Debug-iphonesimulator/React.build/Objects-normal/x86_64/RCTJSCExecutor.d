@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Executors/RCTJSCExecutor.m \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Executors/RCTJSCExecutor.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Modules/RCTDevMenu.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Profiler/RCTJSCProfiler.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/LittleLin/RNProjects/WeatherApp/node_modules/react-native/React/Modules/RCTSourceCode.h
