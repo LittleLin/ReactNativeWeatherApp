@@ -1,5 +1,5 @@
 # ReactNativeWeatherApp
-Weaher App developed by React Native. Inspired by these open source projects: 
+Weather App with React Native. Inspired by these open source projects: 
 
 1. [react-native-weather-app] (https://github.com/catalinmiron/react-native-weather-app)
 2. [react-native-weather-app-1] (https://github.com/catalinmiron/react-native-weather-app-1)
