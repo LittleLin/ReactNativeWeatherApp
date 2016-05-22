@@ -9,32 +9,32 @@ import React, {
   Dimensions
 } from 'react-native';
 
-
 import Swiper from 'react-native-swiper2'
 import Common from './common/common';
 import WeekView from './components/Android/WeekView';
 import Chart from './components/Android/Chart';
+import styles from './styles';
 
 class WeatherApp extends Component {
   constructor(props) {
     super(props);
-    
+
     this.flex = [2,1,6,6];
     let windowSize = Dimensions.get('window');
     let flexItemHeight = windowSize.height / this.flex.reduce(function(a, b){return a+b;});
-    
+
     this.state = {
       initialPosition: null,
       lastPosition: null,
       loaded: false,
-      cityName: 'unknown',      
+      cityName: 'unknown',
       currentWeather: {
         temp: null,
         tempMin: null,
         tempMax: null,
         icon: Common.icon(null),
       },
-      
+
       weekViewData: [],
       chartWidth: windowSize.width,
       chartHeight: flexItemHeight * 2,
@@ -73,7 +73,7 @@ class WeatherApp extends Component {
     var position = this.state.initialPosition;
     var apiUrl = "http://api.openweathermap.org/data/2.5/weather?lon=" + position.coords.longitude + "&lat=" + position.coords.latitude + "&units=metric&lang=zh_tw&appid=bc639fd1425f7df939fafd3a4f64d096";
     var currentWeather = null;
-    
+
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -97,7 +97,7 @@ class WeatherApp extends Component {
       })
       .done();
   }
-  
+
   // 取得行政區名稱
   fetchCityData() {
     var position = this.state.initialPosition;
@@ -127,7 +127,7 @@ class WeatherApp extends Component {
         var chartData = [];
         var temp_max_arr = [];
         var temp_min_arr = [];
-        
+
         Common.week(data.list).map((item, index) => {
           temp_max_arr.push(item.max);
           temp_min_arr.push(item.min);
@@ -159,7 +159,7 @@ class WeatherApp extends Component {
       </Image>
     );
   }
-  
+
   renderOverviewSlide() {
     return (
       <View style={styles.overviewSlide}>
@@ -190,16 +190,16 @@ class WeatherApp extends Component {
 
   renderForecastSlide() {
     return (
-      <View style={styles.forecastSlide}>   
+      <View style={styles.forecastSlide}>
         <View style={{flex: 1}}>
         </View>
-        
-        <View style={{flex: 39}}>     
-          <WeekView data={this.state.weekViewData} flex={this.flex.slice(3)}/>     
-          
-          <Chart 
-            data={this.state.chartData} 
-            width={this.state.chartWidth} 
+
+        <View style={{flex: 39}}>
+          <WeekView data={this.state.weekViewData} flex={this.flex.slice(3)}/>
+
+          <Chart
+            data={this.state.chartData}
+            width={this.state.chartWidth}
             height={this.state.chartHeight}
             top={this.state.chartTop}
             pointFillColors={this.state.chartPointFillColors}
@@ -208,73 +208,26 @@ class WeatherApp extends Component {
             />
         </View>
       </View>
-    );    
+    );
   }
-  
+
   render() {
     if (!this.state.loaded) {
       return this.renderLoadingView();
     }
 
     return (
-      <Image source={require('./images/background.jpg')} style={styles.container}>      
+      <Image source={require('./images/background.jpg')} style={styles.container}>
         <Swiper style={styles.wrapper} horizontal={false} showsButtons={false} showsPagination={false} loop={false}>
-          
+
           {this.renderOverviewSlide()}
-          
+
           {this.renderForecastSlide()}
-          
+
         </Swiper>
       </Image>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,    
-    width: null,
-    height: null,
-    backgroundColor: 'rgba(0,0,0,0)'
-  },
-  loading: {
-    flex: 1,
-    padding: 10,
-    
-  },
-  overviewSlide: {
-    flex: 1,
-    flexDirection: 'column',
-    padding: 20
-  },
-  forecastSlide: {
-    flex: 1,
-    padding: 20
-  },
-  citySection: {
-    flex: 1,
-    flexDirection: 'row',    
-  },
-  weatherSection: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent:'flex-end',
-    padding: 10
-  },
-  city: {
-    fontSize: 35,
-    color: '#EFEFEF',
-    textAlign:'center',
-    flex: 1,
-    flexDirection: 'column',
-  },
-  icon: {
-    fontFamily: 'weathericons-regular-webfont',
-    fontSize: 60,
-    padding: 0,
-    color: '#EFEFEF'
-  }
-});
 
 AppRegistry.registerComponent('WeatherApp', () => WeatherApp);
